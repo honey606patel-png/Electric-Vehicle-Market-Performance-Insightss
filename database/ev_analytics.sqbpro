@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="ev_analytics.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="2614"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="BatteryTech" custom_title="0" dock_id="3" table="4,11:mainBatteryTech"/><dock_state state="000000ff00000000fd0000000100000002000001e10000019bfc0100000003fb000000160064006f0063006b00420072006f00770073006500310100000000ffffffff0000000000000000fb000000160064006f0063006b00420072006f00770073006500320100000000ffffffff0000000000000000fb000000160064006f0063006b00420072006f00770073006500330100000000000001e10000011e00ffffff000001e10000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="BatteryTech" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="2" value="98"/><column index="3" value="119"/><column index="4" value="141"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1*">-- 1. Create Tables
+CREATE TABLE Manufacturers (
+    manufacturer_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    manufacturer_name TEXT NOT NULL,
+    country_of_origin TEXT NOT NULL
+);
+
+CREATE TABLE BatteryTech (
+    battery_tech_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    chemistry_type TEXT NOT NULL,
+    avg_lifespan_years INTEGER,
+    energy_density_wh_kg REAL
+);
+
+CREATE TABLE Vehicles (
+    vehicle_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    model_name TEXT NOT NULL,
+    manufacturer_id INTEGER,
+    category TEXT NOT NULL,
+    battery_tech_id INTEGER,
+    battery_capacity_kwh REAL NOT NULL,
+    driving_range_km REAL NOT NULL,
+    base_price_usd REAL NOT NULL,
+    FOREIGN KEY (manufacturer_id) REFERENCES Manufacturers(manufacturer_id),
+    FOREIGN KEY (battery_tech_id) REFERENCES BatteryTech(battery_tech_id)
+);
+
+CREATE TABLE SalesPerformance (
+    sale_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    vehicle_id INTEGER,
+    sale_year INTEGER NOT NULL,
+    region TEXT NOT NULL,
+    units_sold INTEGER NOT NULL,
+    customer_rating REAL CHECK (customer_rating BETWEEN 1.0 AND 5.0),
+    FOREIGN KEY (vehicle_id) REFERENCES Vehicles(vehicle_id)
+);
+
+-- 2. Populate Sample Records
+INSERT INTO Manufacturers (manufacturer_name, country_of_origin) VALUES
+('Tesla', 'USA'),
+('BYD', 'China'),
+('Hyundai', 'South Korea'),
+('Tata Motors', 'India'),
+('Volkswagen', 'Germany');
+
+INSERT INTO BatteryTech (chemistry_type, avg_lifespan_years, energy_density_wh_kg) VALUES
+('LFP', 10, 160.0),
+('NMC', 8, 220.0),
+('NCA', 8, 250.0),
+('Solid-State', 12, 350.0);
+
+INSERT INTO Vehicles (model_name, manufacturer_id, category, battery_tech_id, battery_capacity_kwh, driving_range_km, base_price_usd) VALUES
+('Model Y', 1, 'SUV', 2, 75.0, 525.0, 48990.00),
+('Model 3', 1, 'Sedan', 1, 60.0, 438.0, 38990.00),
+('Atto 3', 2, 'SUV', 1, 60.4, 420.0, 34000.00),
+('Seal', 2, 'Sedan', 2, 82.5, 570.0, 42000.00),
+('Ioniq 5', 3, 'SUV', 2, 77.4, 488.0, 41450.00),
+('Nexon EV', 4, 'SUV', 1, 40.5, 312.0, 18500.00),
+('Tiago EV', 4, 'Hatchback', 1, 24.0, 250.0, 11000.00),
+('ID.4', 5, 'SUV', 2, 77.0, 443.0, 38995.00);
+
+INSERT INTO SalesPerformance (vehicle_id, sale_year, region, units_sold, customer_rating) VALUES
+(1, 2025, 'North America', 125000, 4.7),
+(1, 2025, 'Europe', 98000, 4.6),
+(2, 2025, 'North America', 85000, 4.5),
+(3, 2025, 'Asia-Pacific', 110000, 4.4),
+(4, 2025, 'Asia-Pacific', 65000, 4.8),
+(5, 2025, 'North America', 45000, 4.6),
+(5, 2025, 'Europe', 52000, 4.5),
+(6, 2025, 'Asia-Pacific', 34000, 4.3),
+(7, 2025, 'Asia-Pacific', 28000, 4.2),
+(8, 2025, 'Europe', 72000, 4.3);</sql><current_tab id="0"/></tab_sql></sqlb_project>
