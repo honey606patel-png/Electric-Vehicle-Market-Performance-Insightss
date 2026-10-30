@@ -26,6 +26,7 @@ An interactive Tableau dashboard, narrative story, and Python Flask web applicat
   * **Average Base Price:** $41,250 USD
   * **Average Driving Range:** 382.4 km
   * **Average Customer Rating:** 4.38 / 5.00
+<img width="1805" height="800" alt="image" src="https://github.com/user-attachments/assets/7925e442-9f56-46e1-b5d8-08f928c5eccf" />
 
 ---
 
