@@ -6,7 +6,7 @@ An interactive Tableau dashboard, narrative story, and Python Flask web applicat
 
 ## 📊 Live Interactive Dashboard & Web Portal
 
-👉 **[View the Live Interactive Web Portal on Render](https://electric-vehicle-market-performance-insightss.onrender.com](https://electric-vehicle-market-performance-tdwa.onrender.com/)**  
+👉 **[View the Live Interactive Web Portal on Render](https://electric-vehicle-market-performance-tdwa.onrender.com/)**  
 👉 **[View the Live Interactive Dashboard on Tableau Public](https://public.tableau.com/views/EV_Market_Performance_Dashboard_17932088931070/Dashboard1)**  
 👉 **[View the 4-Scene Narrative Story on Tableau Public](https://public.tableau.com/views/EV_Market_Performance_Dashboard_17932088931070/Story1)**  
 
