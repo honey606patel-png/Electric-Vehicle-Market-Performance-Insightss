@@ -1,38 +1,72 @@
-# Electric Vehicle Market Performance & Insights
+# Global Electric Vehicle Market Performance & Executive Insights
 
-## Project Overview
-This Capstone Project delivers an end-to-end business intelligence and data analytics solution focused on the global Electric Vehicle (EV) industry. The project examines critical industry dynamics, including annual sales trajectories, manufacturer market share, battery chemistry adoption, driving range efficiencies, pricing models, and consumer sentiment across diverse vehicle categories.
-
-The primary objective is to empower executive decision-makers with actionable, data-backed insights to guide strategic planning, vehicle portfolio optimization, and technology investments.
+An interactive Tableau dashboard, narrative story, and Python Flask web application analyzing global Electric Vehicle (EV) sales volume, battery chemistry efficiencies ($km/kWh$), OEM market share, and regional customer satisfaction benchmarks across major manufacturing hubs.
 
 ---
 
-## Business Scenarios Addressed
+## 📊 Live Interactive Dashboard & Web Portal
 
-1. **Scenario 1: Market Strategy Analysis (Emily Johnson — EV Market Strategy Director)**
-   - Evaluation of sales contribution and market share across vehicle segments (Sedans, SUVs, Hatchbacks, Trucks, Buses, and Two-Wheelers).
-   - Identification of high-growth product segments to guide portfolio expansion and global market penetration.
-
-2. **Scenario 2: Competitive Intelligence & Manufacturer Benchmarking (David Chen — Automotive BI Manager)**
-   - Comprehensive benchmarking of top EV manufacturers by annual volume, geographical production footprint, and customer satisfaction index.
-   - Analysis of production shifts and competitive advantages in major automotive manufacturing hubs.
-
-3. **Scenario 3: Battery Technology & Sustainability Research (Dr. Sarah Williams — Sustainable Mobility Research Analyst)**
-   - Comparative evaluation of key battery chemistries (LFP, NMC, NCA, Sodium-Ion, and Solid-State) across driving range metrics and energy density.
-   - Correlation analysis between battery efficiency and customer adoption to forecast sustainable mobility trends.
+👉 **[View the Live Interactive Web Portal on Render](https://electric-vehicle-market-performance-insightss.onrender.com)**  
+👉 **[View the Live Interactive Dashboard on Tableau Public](https://public.tableau.com/views/EV_Market_Performance_Dashboard_17932088931070/Dashboard1)**  
+👉 **[View the 4-Scene Narrative Story on Tableau Public](https://public.tableau.com/views/EV_Market_Performance_Dashboard_17932088931070/Story1)**  
 
 ---
 
-## Technical Architecture & Pipeline
+## 🖼️ Dashboard Preview
 
-```text
-+-------------------------+      +-------------------------+      +-------------------------+
-|     Raw Data Layer      | ---> |   Relational Database   | ---> |  Business Intelligence  |
-| (Cleaned Multi-Year CSV)|      | (SQL Processing & KPIs) |      | (Tableau Viz & Stories) |
-+-------------------------+      +-------------------------+      +-------------------------+
-                                                                                |
-                                                                                v
-                                                                  +-------------------------+
-                                                                  |     Web Integration     |
-                                                                  |  (Flask UI Application) |
-                                                                  +-------------------------+
+![EV Dashboard Preview](https://raw.githubusercontent.com/honey606patel-png/Electric-Vehicle-Market-Performance-Insightss/main/web_app/templates/dashboard_preview.png)
+
+---
+
+## 📌 Project Overview
+
+* **Data Granularity:** Multi-year global EV market observations across 6 vehicle categories, 4 battery chemistries, and major manufacturing regions (USA, China, Germany, India, South Korea, Japan).
+* **Core KPI Metrics:**
+  * **Total Sales Volume:** 9.78 Million Units
+  * **Average Base Price:** $41,250 USD
+  * **Average Driving Range:** 382.4 km
+  * **Average Customer Rating:** 4.38 / 5.00
+
+---
+
+## 🔍 Key Dashboard Features
+
+1. **Category Sales Breakdown:** Horizontal bar chart highlighting SUV (5.38M units) and Sedan (2.39M units) market dominance, accounting for over 75% of global sales volume.
+2. **Manufacturer Market Share:** Interactive treemap displaying OEM market concentration across industry leaders (Tesla, BYD, Hyundai, Tata Motors, Volkswagen).
+3. **Battery Technology & Range Efficiency:** Dual-axis combo chart benchmarking chemistry performance ($km/kWh$), revealing that Solid-State ($7.01\text{ km/kWh}$) and LFP ($6.92\text{ km/kWh}$) deliver superior energy efficiency.
+4. **Geographic Distribution Map:** Choropleth visualization mapping regional manufacturing throughput and customer satisfaction indices worldwide.
+5. **Interactive Cross-Filtering:** Linked global action filters enabling real-time drill-downs across categories, manufacturers, and regions.
+
+---
+
+## 🛠️ Tools & Technologies
+
+* **Visualization & Storytelling:** Tableau Desktop / Tableau Public
+* **Data Engineering & Analysis:** Python (`pandas`, `sqlite3`), SQL (SQLite Relational DB)
+* **Web Framework & Deployment:** Python Flask, HTML5, Bootstrap 5, Gunicorn, Render
+* **Version Control:** Git & GitHub
+* **Data Source:** `ev_market_performance_dataset.csv`
+
+---
+
+## 🚀 How to Run Locally
+
+1. **Clone this repository:**
+   ```bash
+   git clone https://github.com/honey606patel-png/Electric-Vehicle-Market-Performance-Insightss.git
+   cd Electric-Vehicle-Market-Performance-Insightss
+   ```
+
+2. **Install Python dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run the Flask Web Application:**
+   ```bash
+   cd web_app
+   python app.py
+   ```
+
+4. **Open in Web Browser:**  
+   Navigate to `http://127.0.0.1:5000` to interact with the embedded web portal.
