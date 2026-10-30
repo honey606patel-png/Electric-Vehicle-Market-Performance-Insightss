@@ -14,7 +14,8 @@ An interactive Tableau dashboard, narrative story, and Python Flask web applicat
 
 ## 🖼️ Dashboard Preview
 
-![EV Dashboard Preview](https://raw.githubusercontent.com/honey606patel-png/Electric-Vehicle-Market-Performance-Insightss/main/web_app/templates/dashboard_preview.png)
+<img width="1805" height="800" alt="image" src="https://github.com/user-attachments/assets/1a330ec4-17d0-4c79-a7b5-8a9d890f1e5d" />
+
 
 ---
 
@@ -26,7 +27,6 @@ An interactive Tableau dashboard, narrative story, and Python Flask web applicat
   * **Average Base Price:** $41,250 USD
   * **Average Driving Range:** 382.4 km
   * **Average Customer Rating:** 4.38 / 5.00
-<img width="1805" height="800" alt="image" src="https://github.com/user-attachments/assets/7925e442-9f56-46e1-b5d8-08f928c5eccf" />
 
 ---
 
